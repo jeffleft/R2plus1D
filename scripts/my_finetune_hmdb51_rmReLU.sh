@@ -1,4 +1,4 @@
-python tools/train_net.py \
+python tools/train_net_rmReLU.py \
 --train_data=../datasets/hmdb51_train01 \
 --test_data=../datasets/hmdb51_test01 \
 --model_name=r2plus1d --model_depth=34 \
