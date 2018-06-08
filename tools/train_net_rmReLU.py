@@ -369,10 +369,8 @@ def Train(args):
 
     # modify network by removing ReLU layers
     pdb.set_trace()
-    lookup = {}
-    forward = False
-    for layer in train_model.net().op:
-        print(layer)
+    for layer in train_model.net.Proto().op:
+        # if the output is relu, and it's not batch norm, replace with nancheck?
 
 
     expname = "%s_gpu%d_b%d_L%d_lr%.2f" % (
