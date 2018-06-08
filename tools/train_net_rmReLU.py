@@ -28,6 +28,7 @@ import caffe2.python.predictor.predictor_exporter as pred_exp
 import models.model_builder as model_builder
 import utils.model_helper as model_helper
 import utils.model_loader as model_loader
+import pdb
 
 # Logger
 log = logging.getLogger("train_net")
@@ -365,6 +366,14 @@ def Train(args):
                 log.info("Reset epoch to {}".format(epoch))
             else:
                 log.warning("The format of load_model_path doesn't match!")
+
+    # modify network by removing ReLU layers
+    pdb.set_trace()
+    lookup = {}
+    forward = False
+    for layer in train_model.net().op:
+        print(layer)
+
 
     expname = "%s_gpu%d_b%d_L%d_lr%.2f" % (
         args.model_name,
