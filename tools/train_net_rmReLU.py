@@ -26,6 +26,7 @@ from caffe2.python import workspace, cnn
 from caffe2.python import timeout_guard, experiment_util, data_parallel_model
 import caffe2.python.predictor.predictor_exporter as pred_exp
 import models.model_builder as model_builder
+import models.model_builder_rmReLU as model_builder_rmReLU
 import utils.model_helper as model_helper
 import utils.model_loader as model_loader
 import pdb
@@ -203,7 +204,7 @@ def Train(args):
 
     # Model building functions
     def create_model_ops(model, loss_scale):
-        return model_builder.build_model(
+        return model_builder_rmReLU.build_model(
             model=model,
             model_name=args.model_name,
             model_depth=args.model_depth,
@@ -368,9 +369,9 @@ def Train(args):
                 log.warning("The format of load_model_path doesn't match!")
 
     # modify network by removing ReLU layers
-    pdb.set_trace()
-    for layer in train_model.net.Proto().op:
-        # if the output is relu, and it's not batch norm, replace with nancheck?
+#    pdb.set_trace()
+#    for layer in train_model.net.Proto().op:
+#        # if the output is relu, and it's not batch norm, replace with nancheck?
 
 
     expname = "%s_gpu%d_b%d_L%d_lr%.2f" % (
