@@ -369,7 +369,7 @@ def Train(args):
                 log.warning("The format of load_model_path doesn't match!")
 
     # modify network by removing ReLU layers
-    pdb.set_trace()
+#    pdb.set_trace()
 #    for layer in train_model.net.Proto().op:
 #        # if the output is relu, and it's not batch norm, replace with nancheck?
 

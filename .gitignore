@@ -3,3 +3,4 @@
 *.pkl
 lib/models/*.pyc
 lib/utils/*.pyc
+*.mdl
