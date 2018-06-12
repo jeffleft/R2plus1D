@@ -1,5 +1,7 @@
 # R(2+1)D and Mixed-Convolutions for Action Recognition
 
+Github repo for CS252C. Code taken from facebookresearch (see links below) with few modifications.
+
 ![r2plus1d1](https://raw.githubusercontent.com/dutran/R2Plus1D/master/r2plus1d.png)
 
 [[project page](https://dutran.github.io/R2Plus1D/)] [[paper](https://arxiv.org/abs/1711.11248)]
